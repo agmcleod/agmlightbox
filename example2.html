@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>index</title>
+    <script src="jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="agmlightbox.js"></script>
+    <script type="text/javascript">
+      $.fn.ready(function() {
+        $('#clickme').click(function(e) {
+          $.light_box('<h1>Hi everybody!</h1>', { 
+            cursor: true,
+            e: e
+          });
+        });
+        
+        
+      });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="clickme" value="Click Me" />
+  </body>
+</html>
