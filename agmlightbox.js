@@ -53,10 +53,17 @@
     var d_width = $(document).width();
     var l = (d_width / 2)  - (width / 2);
     var t = (150 + $(document).scrollTop());
+    var set_to_doc = false;
+
+    if(width > $(document).width()) {
+      width = $(document).width() - 50;
+      l = 0;
+      set_to_doc = true;
+    }
     
     if(options.cursor && options.e) {
       var e = options.e;
-      styles['left'] = e.clientX;
+      if(!set_to_doc) styles['left'] = e.clientX;
       styles['top'] = e.clientY;
     } else {
       styles['left'] = l + 'px';
